@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b3151">
+  <meta name="description" content="น้ำดื่มคุณภาพสำหรับทุกวัน ทั้งน้ำดื่มบรรจุขวดและน้ำดื่มบรรจุถัง ติดต่อสอบถามหรือสั่งซื้อได้ที่ 084-456-2954">
+  <meta name="format-detection" content="telephone=no">
+  <title>WATERWELL | น้ำดื่มเพื่อทุกช่วงเวลาของคุณ</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+    :root{
+      --navy:#093250;--dark:#0b2940;--blue:#087bac;--sky:#35bbdf;--aqua:#d5f3fa;
+      --muted:#607989;--line:#e3edf2;--white:#fff;--bg:#f6fbfd;
+      --shadow:0 22px 65px rgba(8,60,92,.11);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;font-family:Prompt,"Noto Sans Thai",Tahoma,sans-serif;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit;cursor:pointer}
+    svg{display:block;max-width:100%}
+    .container{width:min(1160px,calc(100% - 44px));margin-inline:auto}
+    .pill{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:100px;background:#e6f7fb;color:#13769e;font-size:12px;font-weight:600;letter-spacing:.03em}
+    .pill .dot{width:7px;height:7px;border-radius:100%;background:#32bcdc;box-shadow:0 0 0 4px #c9edf6}
+    .section-kicker{display:block;color:#198fac;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{letter-spacing:-.035em}
+    h1{font-size:clamp(40px,5vw,68px);line-height:1.25;font-weight:700;margin-bottom:23px}
+    h2{font-size:clamp(29px,3.3vw,43px);line-height:1.4;font-weight:600;margin-bottom:19px}
+    h3{font-size:23px;line-height:1.45;margin-bottom:12px}
+    p{line-height:1.95;font-size:15px;color:var(--muted)}
+    .btn{border:0;min-height:50px;padding:12px 23px;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;gap:11px;font-size:14px;font-weight:600;transition:transform .2s ease,background .2s ease,box-shadow .2s ease;white-space:nowrap}
+    .btn:hover{transform:translateY(-2px)}
+    .btn svg{height:18px;width:18px}
+    .btn-primary{color:#fff;background:var(--navy);box-shadow:0 12px 26px rgba(9,50,80,.19)}
+    .btn-primary:hover{background:#0b4970}
+    .btn-soft{color:var(--navy);background:#fff;border:1px solid #d4e7ed}
+    .btn-soft:hover{background:#f0faff}
+    .site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(213,230,236,.84)}
+    .nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0}
+    .brand-symbol{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#5bd4e8 4%,#0b8fbc 96%);box-shadow:0 9px 18px rgba(36,168,200,.19)}
+    .brand-symbol svg{width:27px;height:27px}
+    .brand-text{display:flex;flex-direction:column;line-height:1.12}
+    .brand-text strong{color:#0b3855;font:700 20px/1.1 Prompt,sans-serif;letter-spacing:-.035em}
+    .brand-text small{color:#6e8997;font-size:10px;letter-spacing:.035em;margin-top:5px}
+    .nav-links{display:flex;align-items:center;gap:37px;margin-left:auto;margin-right:16px}
+    .nav-links a{font-size:13px;font-weight:500;color:#5c7584;transition:color .2s}
+    .nav-links a:hover,.nav-links a:focus-visible{color:#047ba6}
+    .nav-tel{font-size:13px;padding-inline:18px;min-height:43px}
+    .menu-toggle{display:none;border:1px solid #d9eaf0;color:var(--navy);background:#fff;border-radius:10px;padding:10px}
+    .menu-toggle svg{width:22px;height:22px}
+
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 74% 42%,#ddf7ff 0,#eefaff 33%,#f8fcff 61%,#fff 100%)}
+    .hero::before{content:"";position:absolute;width:650px;height:650px;right:-230px;bottom:-450px;border-radius:50%;background:#bceef6;filter:blur(12px);opacity:.43}
+    .hero-grid{min-height:590px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;position:relative}
+    .hero-copy{padding:45px 0 65px;position:relative;z-index:1}
+    .hero h1 span{color:#128eb3}
+    .hero-description{max-width:520px;font-size:16px;line-height:2;margin-bottom:30px}
+    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .hero-micro{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap}
+    .micro-item{display:flex;align-items:center;gap:11px;color:#547383;font-size:12px}
+    .micro-icon{width:33px;height:33px;display:grid;place-items:center;border-radius:50%;background:white;box-shadow:0 5px 18px rgba(12,92,116,.08)}
+    .micro-icon svg{width:17px;height:17px;stroke:#079dc1}
+    .hero-art{position:relative;height:550px;display:flex;align-items:center;justify-content:center}
+    .hero-halo{position:absolute;width:min(95%,510px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 48% 39%,#fff 0%,#d9f5fc 51%,#c4eefa 70%,rgba(216,244,250,0) 71%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+    .hero-halo::before,.hero-halo::after{content:"";position:absolute;border:1px solid rgba(100,183,207,.2);border-radius:50%;inset:30px}
+    .hero-halo::after{inset:66px}
+    .hero-bottle{width:min(89%,490px);filter:drop-shadow(8px 25px 23px rgba(4,85,120,.20));position:relative;z-index:1;transform:rotate(-5deg)}
+    .bubble{position:absolute;background:linear-gradient(140deg,rgba(255,255,255,.94),rgba(119,215,239,.16));border:1px solid rgba(81,187,213,.16);box-shadow:inset -4px -5px 12px rgba(51,160,197,.09),0 12px 28px rgba(75,153,173,.07);border-radius:100%}
+    .bubble.one{width:44px;height:44px;right:8%;top:19%}
+    .bubble.two{width:19px;height:19px;left:12%;top:27%}
+    .bubble.three{width:28px;height:28px;right:15%;bottom:18%}
+    .float-tag{position:absolute;bottom:90px;left:-10px;z-index:2;display:flex;align-items:center;gap:12px;padding:12px 17px;border-radius:17px;background:rgba(255,255,255,.91);box-shadow:0 18px 50px rgba(11,93,128,.13);border:1px solid #fff;backdrop-filter:blur(6px)}
+    .float-tag .drop{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#e6f8fc;color:#0b9bc0}
+    .float-tag .drop svg{width:23px;height:23px}
+    .float-tag strong{display:block;font-size:13px;color:#123e58}
+    .float-tag small{display:block;color:#859ca9;font-size:11px;margin-top:2px}
+    .wave{display:block;width:100%;height:56px;margin-top:-56px;position:relative;z-index:2;pointer-events:none}
+
+    .about{padding:114px 0 115px;background:#fff}
+    .about-layout{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:94px}
+    .about-visual{position:relative;border-radius:28px;background:linear-gradient(140deg,#e2f7fc,#bbebf5);min-height:405px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .about-visual::before{content:"";position:absolute;width:315px;height:315px;border:1px solid rgba(255,255,255,.75);border-radius:50%;box-shadow:0 0 0 35px rgba(255,255,255,.18),0 0 0 70px rgba(255,255,255,.12)}
+    .about-visual svg{position:relative;z-index:1;width:82%;max-height:360px}
+    .about-stamp{position:absolute;bottom:20px;left:23px;z-index:2;background:#fff;padding:13px 18px;border-radius:15px;box-shadow:0 8px 24px rgba(24,105,131,.13);display:flex;align-items:center;gap:11px}
+    .about-stamp .icon{color:#0898be;background:#e9f8fc;border-radius:50%;padding:8px}
+    .about-stamp svg{width:22px;height:22px}
+    .about-stamp strong{font-size:12px;font-weight:600}
+    .about-copy>p{margin-bottom:20px}
+    .about-points{display:grid;gap:15px;margin:25px 0 0}
+    .about-point{display:flex;align-items:flex-start;gap:13px;font-size:13px;color:#466678}
+    .check{flex:0 0 24px;height:24px;display:grid;place-items:center;background:#e0f6f9;color:#0799ae;border-radius:50%}
+    .check svg{width:13px;height:13px}
+
+    .products{padding:102px 0 116px;background:#f5fafc}
+    .section-head{text-align:center;max-width:660px;margin:0 auto 44px}
+    .section-head p{margin-bottom:0}
+    .product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:27px}
+    .product-card{background:#fff;border-radius:24px;overflow:hidden;border:1px solid #e4eff3;box-shadow:0 11px 35px rgba(14,93,118,.035);transition:transform .25s,box-shadow .25s}
+    .product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .product-visual{height:310px;background:radial-gradient(circle at 50% 56%,#eafbff 0,#dff5fa 47%,#ebf8fa 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .product-visual::before{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(109,206,230,.35);border-radius:50%;box-shadow:0 0 0 45px rgba(255,255,255,.18)}
+    .product-visual svg{height:260px;max-width:100%;position:relative;z-index:1;filter:drop-shadow(6px 19px 13px rgba(3,98,126,.15))}
+    .product-body{padding:29px 32px 32px}
+    .product-label{font-size:11px;font-weight:600;color:#0991b4;margin:0 0 10px;letter-spacing:.07em}
+    .product-body h3{font-size:24px;margin-bottom:12px}
+    .product-body p{font-size:13px;min-height:52px;margin-bottom:24px}
+    .product-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#067fa8}
+    .product-link svg{height:16px;width:16px;transition:transform .2s}
+    .product-link:hover svg{transform:translateX(4px)}
+
+    .contact{padding:100px 0 108px;background:linear-gradient(120deg,#0b3553 0%,#0b4d6c 57%,#097aa0 100%);position:relative;overflow:hidden}
+    .contact::before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-250px;box-shadow:0 0 0 65px rgba(255,255,255,.04),0 0 0 130px rgba(255,255,255,.025)}
+    .contact-grid{display:grid;grid-template-columns:1fr auto;align-items:center;gap:45px;position:relative;z-index:1}
+    .contact .section-kicker{color:#73d8f1}
+    .contact h2{color:#fff;margin-bottom:11px}
+    .contact p{color:#c0dce8;max-width:570px;margin-bottom:0}
+    .contact-action{background:#fff;border-radius:20px;padding:24px 30px;min-width:320px;box-shadow:0 20px 50px rgba(1,29,47,.13)}
+    .contact-action small{font-size:12px;color:#7391a0;display:block;margin-bottom:6px}
+    .contact-number{font-size:29px;font-weight:700;letter-spacing:.01em;color:#0c3857;display:block;line-height:1.4}
+    .contact-action .btn{width:100%;margin-top:16px;background:#0b83ad}
+    .contact-action .btn:hover{background:#09698f}
+    .footer{background:#08283e;color:#b6cbd5}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0}
+    .footer .brand-text strong{font-size:17px;color:#fff}
+    .footer .brand-text small{color:#a9c7d5}
+    .footer .brand-symbol{width:36px;height:36px;border-radius:11px}
+    .footer .brand-symbol svg{height:22px;width:22px}
+    .footer p{margin:0;color:#b6cbd5;font-size:11px}
+    .footer a:hover{color:#fff}
+
+    @media(max-width:950px){
+      .about-layout{gap:42px}
+      .hero-grid{gap:0}
+      h1{font-size:clamp(37px,5vw,55px)}
+      .float-tag{left:0}
+    }
+    @media(max-width:740px){
+      html{scroll-padding-top:78px}
+      .container{width:min(100% - 36px,560px)}
+      .nav{height:70px}
+      .nav-links{display:none;position:absolute;top:69px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:20px 24px 24px;box-shadow:0 12px 20px rgba(7,61,88,.08);margin:0;flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}
+      .nav-links a{display:block;padding:13px 8px;font-size:15px}
+      .nav-tel{margin-left:auto;min-height:39px;padding:8px 12px;font-size:12px}
+      .menu-toggle{display:grid;place-items:center}
+      .hero-grid{grid-template-columns:1fr;gap:0;min-height:auto}
+      .hero-copy{padding:70px 0 5px;text-align:center}
+      h1{font-size:clamp(39px,8.5vw,54px)}
+      .hero-description{font-size:14px;margin-inline:auto}
+      .hero-actions,.hero-micro{justify-content:center}
+      .hero-micro{margin-top:27px;gap:15px}
+      .hero-art{height:405px}
+      .hero-halo{width:375px;max-width:92%}
+      .hero-bottle{width:360px;max-width:91%}
+      .float-tag{left:4%;bottom:50px;transform:scale(.87);transform-origin:left bottom}
+      .wave{height:35px;margin-top:-35px}
+      .about{padding:74px 0 79px}
+      .about-layout{grid-template-columns:1fr;gap:40px}
+      .about-visual{min-height:330px;order:2}
+      .about-visual svg{max-height:290px}
+      .about-copy{order:1}
+      .products{padding:78px 0 85px}
+      .product-grid{grid-template-columns:1fr;gap:20px}
+      .product-visual{height:290px}
+      .contact{padding:80px 0}
+      .contact-grid{grid-template-columns:1fr;gap:30px}
+      .contact-action{min-width:0;max-width:390px;width:100%}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:380px){
+      .brand-text strong{font-size:17px}
+      .brand-text small{font-size:9px}
+      .brand{gap:7px}
+      .brand-symbol{width:37px;height:37px}
+      .nav-tel{font-size:11px;padding:8px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .contact-number{font-size:26px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="เมนูหลัก">
+      <a class="brand" href="#home" aria-label="WATERWELL กลับสู่หน้าแรก">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 3.5C11.2 9.2 6.7 13.6 6.7 18.6a8.3 8.3 0 0 0 16.6 0C23.3 13.6 18.8 9.2 15 3.5Z" fill="white" opacity=".94"/><path d="M10.5 20a4.6 4.6 0 0 0 4.6 3.6" stroke="#81DCEB" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-text"><strong>WATERWELL</strong><small>น้ำดื่มเพื่อคุณภาพชีวิต</small></span>
+      </a>
+      <div class="nav-links" id="site-menu">
+        <a href="#home">หน้าแรก</a>
+        <a href="#about">ประวัติบริษัท</a>
+        <a href="#products">สินค้าของเรา</a>
+        <a href="#contact">ติดต่อเรา</a>
+      </div>
+      <a class="btn btn-primary nav-tel" href="tel:0844562954" aria-label="โทร 084-456-2954">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.1 2 2 0 0 1 5 2.9h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.8l-1.3 1.3a16 16 0 0 0 4.9 4.9l1.3-1.3a2 2 0 0 1 1.8-.6l2.8.5a2 2 0 0 1 1.6 2Z"/></svg>
+        <span>โทรสอบถาม</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="เปิดเมนู" aria-controls="site-menu" aria-expanded="false" id="menu-button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot"></span> น้ำดื่มสำหรับทุกวันของคุณ</span>
+          <h1 id="hero-title" style="margin-top:24px">เติมความสดชื่น<br>ในทุก ๆ วัน<br><span>ด้วยน้ำดื่มของเรา</span></h1>
+          <p class="hero-description">เพราะน้ำดื่มเป็นส่วนหนึ่งของทุกช่วงเวลา เราจึงใส่ใจในการส่งมอบน้ำดื่มที่สะอาด สดชื่น และสะดวกสบายสำหรับบ้านและที่ทำงาน</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">ดูสินค้าของเรา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a href="tel:0844562954" class="btn btn-soft">ติดต่อสั่งซื้อ</a>
+          </div>
+          <div class="hero-micro">
+            <span class="micro-item"><span class="micro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>ใส่ใจทุกขั้นตอน</span>
+            <span class="micro-item"><span class="micro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4.5 8-12a8 8 0 0 0-16 0c0 7.5 8 12 8 12Z"/><path d="M12 6v8m-4-4h8"/></svg></span>สำหรับบ้านและสำนักงาน</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-halo"></div><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span>
+          <svg class="hero-bottle" viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="bottleGlass" x1="173" y1="40" x2="349" y2="489" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".96"/><stop offset=".20" stop-color="#dff7ff" stop-opacity=".76"/><stop offset=".52" stop-color="#a2dff0" stop-opacity=".5"/><stop offset=".82" stop-color="#daeff7" stop-opacity=".75"/><stop offset="1" stop-color="#74bed8" stop-opacity=".9"/></linearGradient>
+              <linearGradient id="waterFill" x1="199" y1="363" x2="325" y2="521" gradientUnits="userSpaceOnUse"><stop stop-color="#d2f7fc" stop-opacity=".5"/><stop offset="1" stop-color="#7bceee" stop-opacity=".66"/></linearGradient>
+              <linearGradient id="cap" x1="212" y1="52" x2="288" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#045678"/><stop offset=".5" stop-color="#1ab1d0"/><stop offset="1" stop-color="#08648d"/></linearGradient>
+              <linearGradient id="labelBg" x1="160" y1="275" x2="344" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#edfbff"/></linearGradient>
+              <filter id="softSh" x="60" y="0" width="380" height="565" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="3"/></filter>
+            </defs>
+            <ellipse cx="248" cy="527" rx="125" ry="17" fill="#1b87a5" opacity=".12" filter="url(#softSh)"/>
+            <path d="M216 65h68v49c0 29 61 49 66 85l13 254c1 45-16 75-49 80-30 4-100 4-130 0-33-5-50-35-49-80l13-254c5-36 68-56 68-85V65Z" fill="url(#bottleGlass)" stroke="#90d9ec" stroke-width="4"/>
+            <path d="M145 383c33-12 62 12 104 8 43-5 80-21 111-6l3 74c1 42-17 69-49 74-31 4-99 4-130 0-32-5-50-32-49-74l10-76Z" fill="url(#waterFill)"/>
+            <path d="M165 230c4-30 62-55 68-77" stroke="#fff" stroke-opacity=".86" stroke-width="11" stroke-linecap="round"/>
+            <path d="M177 364c-2 37-5 75-3 110 1 22 10 35 22 41" stroke="#fff" stroke-opacity=".66" stroke-width="9" stroke-linecap="round"/>
+            <path d="M329 204c5 70 10 189 8 260" stroke="#57b1ca" stroke-opacity=".28" stroke-width="6" stroke-linecap="round"/>
+            <rect x="211" y="34" width="76" height="45" rx="9" fill="url(#cap)"/>
+            <path d="M222 42v28m12-28v28m12-28v28m12-28v28m12-28v28m11-27V43" stroke="#93e4ef" stroke-opacity=".35" stroke-width="3"/>
+            <rect x="208" y="75" width="82" height="8" rx="3" fill="#0f789b"/>
+            <path d="M151 276c63-9 130-6 198-1l3 105c-68-6-135-9-205 0l4-104Z" fill="url(#labelBg)" stroke="#d7eef5" stroke-width="2"/>
+            <path d="M149 367c69-10 134-7 201-1" stroke="#b9e8f2" stroke-width="3"/>
+            <path d="M150 290c68-8 131-5 198 0" stroke="#c2ecf4" stroke-width="2"/>
+            <path d="M248 301c-11 16-24 29-24 42a24 24 0 0 0 48 0c0-13-13-26-24-42Z" fill="#2ac0d9"/>
+            <path d="M237 342c0 8 4 13 12 14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+            <text x="250" y="368" text-anchor="middle" fill="#0c4e6e" font-size="23" font-family="Arial,sans-serif" font-weight="700" letter-spacing="1.4">WATERWELL</text>
+            <path d="M218 394c15-3 46-2 64 1" stroke="#e6fbff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+            <path d="M224 419c13-2 38-1 53 1" stroke="#e6fbff" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+            <path d="M225 446c13-2 38-1 53 1" stroke="#e6fbff" stroke-width="4" stroke-linecap="round" opacity=".56"/>
+          </svg>
+          <div class="float-tag"><span class="drop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.5 7.4 5 11 5 15a7 7 0 0 0 14 0c0-4-3.5-7.6-7-13Z"/><path d="M8.5 15a3.5 3.5 0 0 0 3.5 3.5" stroke-linecap="round"/></svg></span><span><strong>ความสดชื่นที่เลือกได้</strong><small>น้ำดื่มขวดและน้ำดื่มถัง</small></span></div>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 45c244-60 423-21 660 0 220 20 464-49 780-13v38H0Z" fill="white"/></svg>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-visual" aria-hidden="true">
+          <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs><linearGradient id="jug" x1="160" y1="50" x2="338" y2="351" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".95"/><stop offset=".45" stop-color="#dcf6fc" stop-opacity=".75"/><stop offset="1" stop-color="#75c7df" stop-opacity=".68"/></linearGradient><linearGradient id="jugcap" x1="214" y1="44" x2="277" y2="68" gradientUnits="userSpaceOnUse"><stop stop-color="#075577"/><stop offset="1" stop-color="#19b3d0"/></linearGradient></defs>
+            <ellipse cx="250" cy="360" rx="127" ry="15" fill="#219bb8" opacity=".14"/>
+            <path d="M221 53h56v41c0 16 12 24 29 34 36 22 55 66 55 104v79c0 31-18 45-48 45H184c-30 0-48-14-48-45v-79c0-38 19-82 55-104 17-10 30-18 30-34V53Z" fill="url(#jug)" stroke="#86d3e8" stroke-width="4"/>
+            <path d="M145 272c43-15 77 8 107 6 47-2 77-19 107-4v42c0 28-17 42-46 42H184c-30 0-48-14-48-46v-40Z" fill="#5fc4e5" opacity=".32"/>
+            <rect x="212" y="40" width="74" height="33" rx="8" fill="url(#jugcap)"/>
+            <path d="M224 48v18m14-18v18m14-18v18m14-18v18m12-17v15" stroke="#a1e8f0" stroke-opacity=".44" stroke-width="3"/>
+            <path d="M180 185c-12 17-16 32-17 59M173 265v44" stroke="white" stroke-width="11" opacity=".75" stroke-linecap="round"/>
+            <path d="M320 164c14 22 20 44 20 75" stroke="#65bad6" stroke-width="7" opacity=".4" stroke-linecap="round"/>
+            <rect x="153" y="213" width="190" height="80" rx="12" fill="white" opacity=".92"/>
+            <path d="M248 222c-8 12-17 21-17 31a17 17 0 0 0 34 0c0-10-9-19-17-31Z" fill="#33bedb"/>
+            <text x="248" y="278" text-anchor="middle" fill="#116384" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="1.4">WATERWELL</text>
+            <g fill="white" opacity=".65"><circle cx="104" cy="116" r="11"/><circle cx="386" cy="147" r="15"/><circle cx="396" cy="102" r="6"/></g>
+          </svg>
+          <div class="about-stamp"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3 8 8 10 5-2 8-5 8-10V6l-8-4Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><strong>ใส่ใจในคุณภาพทุกหยด</strong></div>
+        </div>
+        <div class="about-copy">
+          <span class="section-kicker">ABOUT OUR COMPANY</span>
+          <h2 id="about-title">รู้จักเราให้มากขึ้น<br>ผ่านความตั้งใจในทุกหยดน้ำ</h2>
+          <p>WATERWELL เป็นชื่อแบรนด์ตัวอย่างของธุรกิจจำหน่ายน้ำดื่มที่มุ่งเน้นความสะดวกและความใส่ใจในคุณภาพ เพื่อให้ลูกค้าสามารถเลือกน้ำดื่มที่เหมาะกับการใช้งานในแต่ละวันได้อย่างง่ายดาย</p>
+          <p>เราจัดจำหน่ายทั้งน้ำดื่มบรรจุขวดสำหรับการพกพาและกิจกรรมต่าง ๆ รวมถึงน้ำดื่มบรรจุถังสำหรับครอบครัว สำนักงาน และสถานประกอบการ พร้อมให้คำแนะนำเกี่ยวกับผลิตภัณฑ์และการสั่งซื้อ</p>
+          <div class="about-points">
+            <div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span><span>เลือกประเภทน้ำดื่มให้เหมาะกับการใช้งาน</span></div>
+            <div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span><span>ให้ความสำคัญกับความสะดวกของลูกค้า</span></div>
+            <div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span><span>ติดต่อสอบถามรายละเอียดและสั่งซื้อได้โดยตรง</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-head"><span class="section-kicker">OUR PRODUCTS</span><h2 id="products-title">เลือกความสดชื่นในแบบที่คุณต้องการ</h2><p>เรามีน้ำดื่มให้เลือก 2 รูปแบบ ตอบโจทย์ทั้งการใช้ชีวิตประจำวันและความต้องการของธุรกิจ</p></div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-visual" aria-hidden="true">
+              <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <defs><linearGradient id="pb" x1="115" y1="20" x2="200" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".98"/><stop offset=".5" stop-color="#ccf2fb" stop-opacity=".75"/><stop offset="1" stop-color="#83cde8" stop-opacity=".75"/></linearGradient><linearGradient id="pc" x1="135" y1="19" x2="180" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#006489"/><stop offset="1" stop-color="#2ec4db"/></linearGradient></defs>
+                <ellipse cx="170" cy="274" rx="88" ry="10" fill="#1a7fa5" opacity=".12"/>
+                <g transform="translate(58,45) scale(.76)"><path d="M100 53h42v31c0 17 43 30 45 59l6 121c1 27-10 37-32 40-17 2-61 2-80 0-23-3-34-13-33-40l7-121c2-29 45-42 45-59V53Z" fill="url(#pb)" stroke="#8dcfe5" stroke-width="3"/><rect x="96" y="33" width="50" height="28" rx="6" fill="url(#pc)"/><rect x="58" y="171" width="128" height="70" rx="5" fill="white" stroke="#dbf3fa"/><path d="M122 180c-7 10-15 19-15 27a15 15 0 0 0 30 0c0-8-8-17-15-27Z" fill="#40c0d8"/><text x="122" y="232" font-size="11" text-anchor="middle" font-family="Arial" font-weight="bold" fill="#13577b">WATERWELL</text></g>
+                <g transform="translate(143,-3)"><path d="M100 53h42v31c0 17 43 30 45 59l6 121c1 27-10 37-32 40-17 2-61 2-80 0-23-3-34-13-33-40l7-121c2-29 45-42 45-59V53Z" fill="url(#pb)" stroke="#8dcfe5" stroke-width="3"/><rect x="96" y="33" width="50" height="28" rx="6" fill="url(#pc)"/><path d="M69 149c2-20 31-37 38-47" stroke="white" stroke-opacity=".8" stroke-width="8" stroke-linecap="round"/><rect x="58" y="171" width="128" height="70" rx="5" fill="white" stroke="#dbf3fa"/><path d="M122 180c-7 10-15 19-15 27a15 15 0 0 0 30 0c0-8-8-17-15-27Z" fill="#40c0d8"/><text x="122" y="232" font-size="11" text-anchor="middle" font-family="Arial" font-weight="bold" fill="#13577b">WATERWELL</text></g>
+              </svg>
+            </div>
+            <div class="product-body"><p class="product-label">BOTTLED WATER</p><h3>น้ำดื่มบรรจุขวด</h3><p>สะดวกต่อการพกพา เหมาะสำหรับครอบครัว ห้องประชุม งานกิจกรรม และการใช้งานทั่วไป</p><a class="product-link" href="tel:0844562954" aria-label="โทรสอบถามสินค้าน้ำดื่มบรรจุขวด">สอบถามรายละเอียดสินค้า <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+          </article>
+          <article class="product-card">
+            <div class="product-visual" aria-hidden="true">
+              <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <defs><linearGradient id="pj" x1="122" y1="23" x2="246" y2="287" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity=".97"/><stop offset=".45" stop-color="#cceefa" stop-opacity=".66"/><stop offset="1" stop-color="#7acbe7" stop-opacity=".79"/></linearGradient><linearGradient id="pcc" x1="152" y1="30" x2="188" y2="65" gradientUnits="userSpaceOnUse"><stop stop-color="#0d5474"/><stop offset="1" stop-color="#24bfda"/></linearGradient></defs>
+                <ellipse cx="170" cy="280" rx="94" ry="12" fill="#1d8dad" opacity=".12"/>
+                <path d="M148 44h44v26c0 16 13 23 30 34 26 18 40 50 40 75v60c0 31-16 41-43 41H121c-27 0-43-10-43-41v-60c0-25 14-57 40-75 17-11 30-18 30-34V44Z" fill="url(#pj)" stroke="#86d1e6" stroke-width="3"/>
+                <path d="M81 222c36-15 60 5 90 4 42-1 63-18 90-4v19c0 29-15 39-42 39h-98c-27 0-43-10-43-39v-19Z" fill="#56bfdf" opacity=".22"/>
+                <rect x="142" y="24" width="56" height="36" rx="7" fill="url(#pcc)"/>
+                <path d="M151 33v18m11-18v18m11-18v18m11-18v18" stroke="white" stroke-opacity=".28" stroke-width="3"/>
+                <path d="M107 154c-7 17-9 31-9 44m0 18v23" stroke="white" stroke-width="8" stroke-linecap="round" stroke-opacity=".8"/>
+                <rect x="95" y="162" width="150" height="69" rx="9" fill="white" opacity=".95"/>
+                <path d="M170 169c-7 10-14 17-14 25a14 14 0 0 0 28 0c0-8-7-15-14-25Z" fill="#3fc2dc"/>
+                <text x="170" y="216" font-size="14" text-anchor="middle" font-family="Prompt" font-weight="bold" fill="#13577b">WATERWELL</text>
+              </svg>
+            </div>
+            <div class="product-body"><p class="product-label">WATER JUG</p><h3>น้ำดื่มบรรจุถัง</h3><p>ตอบโจทย์การใช้น้ำในปริมาณมาก เหมาะสำหรับบ้าน สำนักงาน ร้านค้า และสถานประกอบการ</p><a class="product-link" href="tel:0844562954" aria-label="โทรสอบถามสินค้าน้ำดื่มบรรจุถัง">สอบถามรายละเอียดสินค้า <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div><span class="section-kicker">CONTACT US</span><h2 id="contact-title">สนใจน้ำดื่มของเรา?<br>ติดต่อได้เลยวันนี้</h2><p>สอบถามประเภทสินค้า รายละเอียดการสั่งซื้อ และข้อมูลเพิ่มเติมได้ทางโทรศัพท์ เรายินดีให้ข้อมูลเพื่อช่วยคุณเลือกน้ำดื่มที่เหมาะสม</p></div>
+        <div class="contact-action"><small>สอบถามหรือสั่งซื้อสินค้า</small><a class="contact-number" href="tel:0844562954">084-456-2954</a><a class="btn btn-primary" href="tel:0844562954"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.1 2 2 0 0 1 5 2.9h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.8l-1.3 1.3a16 16 0 0 0 4.9 4.9l1.3-1.3a2 2 0 0 1 1.8-.6l2.8.5a2 2 0 0 1 1.6 2Z"/></svg> โทรติดต่อทันที</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none"><path d="M15 3.5C11.2 9.2 6.7 13.6 6.7 18.6a8.3 8.3 0 0 0 16.6 0C23.3 13.6 18.8 9.2 15 3.5Z" fill="white"/></svg></span><span class="brand-text"><strong>WATERWELL</strong><small>น้ำดื่มเพื่อคุณภาพชีวิต</small></span></a><p>© <span id="year">2026</span> WATERWELL. All rights reserved. | โทร <a href="tel:0844562954">084-456-2954</a></p></div></footer>
+  <script>
+    (() => {
+      const button = document.querySelector('#menu-button');
+      const menu = document.querySelector('#site-menu');
+      if (button && menu) {
+        const closeMenu = () => { menu.classList.remove('open'); button.setAttribute('aria-expanded','false'); button.setAttribute('aria-label','เปิดเมนู'); };
+        button.addEventListener('click', () => {
+          const isOpen = menu.classList.toggle('open');
+          button.setAttribute('aria-expanded', String(isOpen));
+          button.setAttribute('aria-label', isOpen ? 'ปิดเมนู' : 'เปิดเมนู');
+        });
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+      }
+      const year = document.getElementById('year');
+      if (year) year.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>
